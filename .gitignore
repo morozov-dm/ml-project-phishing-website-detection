@@ -1,0 +1,62 @@
+# ========================
+# Jupyter Notebook
+# ========================
+.ipynb_checkpoints/
+*.ipynb*
+
+# ========================
+# Python
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ========================
+# Virtual environments
+# ========================
+venv/
+env/
+ENV/
+.venv/
+.env/
+anaconda3/
+miniconda3/
+
+# ========================
+# Experiment logs and temporary artifacts
+# ========================
+# MLflow — tracking artifacts (logs, metrics, models)
+mlruns/
+
+# Optuna — hyperparameter tuning logs
+optuna_logs/
+
+# Keras/TensorFlow — local cache and temp files
+.keras/
+*.h5.tmp
+
+# General logs and caches
+logs/
+.cache/
+*.log
+
+# ========================
+# System files
+# ========================
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ========================
+# Editor config and local settings
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
