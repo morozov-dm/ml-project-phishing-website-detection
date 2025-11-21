@@ -47,9 +47,9 @@ Hyperparameters were optimized using **cross-validation** (Logistic Regression) 
 
 | Model | Optimization Method | Training Time (sec) |
 |-------|---------------------|---------------------|
-| Logistic Regression | GridSearchCV (5-fold CV) | 1.96 |
-| XGBoost | Optuna (50 trials) | 0.77 |
-| Keras (Neural Network) | Optuna (50 trials) | 49.20 |
+| Logistic Regression | GridSearchCV (5-fold CV) | 2.40 |
+| XGBoost | Optuna (50 trials) | 0.51 |
+| Keras (Neural Network) | Optuna (50 trials) | 43.91 |
 
 ### 4. **Evaluation**
 Models were evaluated on an **unseen test set (1,170 samples)** using:
@@ -63,9 +63,9 @@ Models were evaluated on an **unseen test set (1,170 samples)** using:
 
 | Model | ROC AUC | Precision | Recall | F1-score | Training Time (sec) |
 |-------|---------|-----------|--------|----------|---------------------|
-| **XGBoost** | **0.9933** | **0.9571** | **0.9452** | **0.9511** | **0.77** |
-| Keras | 0.9854 | 0.9192 | 0.9452 | 0.9321 | 49.20 |
-| Logistic Regression | 0.9735 | 0.8979 | 0.9073 | 0.9073 | 1.96 |
+| **XGBoost** | **0.9932** | **0.9571** | **0.9452** | **0.9511** | **0.51** |
+| Keras | 0.9738 | 0.9152 | 0.9346 | 0.9248 | 43.91 |
+| Logistic Regression | 0.9735 | 0.8979 | 0.9170 | 0.9073 | 2.40 |
 
 ### 🔑 Key Insights
 
@@ -73,7 +73,7 @@ Models were evaluated on an **unseen test set (1,170 samples)** using:
   Highest **ROC AUC**, highest **precision**, fastest training — and **equal recall** to Keras.  
   This means:  
   > 🔹 It catches **94.5% of phishing sites** (low false negatives).  
-  > 🔹 It **only mislabels 4.3% of legitimate sites** as phishing (lowest false positives).  
+  > 🔹 It **only mislabels 2% of legitimate sites** as phishing (lowest false positives).  
 
 - 🚫 **Keras** matches XGBoost in recall but has **~5% more false positives** — a critical flaw in production (users hate blocked legitimate sites).
 
@@ -81,6 +81,6 @@ Models were evaluated on an **unseen test set (1,170 samples)** using:
 
 - 📊 **Confusion matrices confirm**:  
   XGBoost has the **fewest false positives (24)** — meaning it’s safest for end-users.  
-  Keras has **47 false positives** — nearly double — making it less suitable for real-time blocking.
+  Keras has **49 false positives** — nearly double — making it less suitable for real-time blocking.
 
 ---
