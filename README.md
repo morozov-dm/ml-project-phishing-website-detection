@@ -1,5 +1,4 @@
-# 🛡️ Phishing Website Detection using Machine & Deep Learning
-
+![infographic](images/infographic.png)
 ---
 
 ## 🎯 Objective
